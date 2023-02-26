@@ -1,42 +1,89 @@
-# FG-UDP-controler
-this is an UDP socket module of 飞参序列驱动的三维可视化试飞讲评系统。
-## 环境
+# 试飞讲评系统Teaching and evaluation  tools system for aviation experiments
+
+此项目为飞参序列驱动的三维可视化试飞讲评系统对外演示版本，不涉及核心代码。
+
+公开的代码仅包括一段对FlightGear控制的演示。
+
+## 环境说明
+
 - Windows 11
-- Flight gear 2022.3
-- Python 3.9.7
-- conda 4.12.0
+- [Flight gear](https://www.flightgear.org/) 2022.3
+- [Python](https://www.python.org/downloads/) 3.9.7
+- [conda](https://www.anaconda.com/) 4.12.0
 - numpy 1.22.3
 - pandas 1.3.4
 
-## demo v0.1 使用说明：
-0. 将config 目录下的fgudp.xml 放入 `` $FGROOT\data\Protocol\`` 目录下，其中``$FGROOT``是FlightGear的安装目录
-1. 打开flightgear，在 设置 中输入以下字段
->--allow-nasal-from-sockets     
->--telnet=5555      
->--httpd=5500       
->--generic=socket,in,10,127.0.0.1,5701,udp,fgudp        
->--generic=socket,out,10,127.0.0.1,5700,udp,fgudp       
-2. 在flightgear里点击 开始飞行
-3. 启动 ``readcsv.py`` 程序，程序会读取simplydata2.csv保存的数据。
-4. 当前版本可以连续的控制飞行高度了
-## 已经完成的功能
-1. 给定参数初始化
-2. 可以较方便的更改参数（通过class FlightParameter类）
-3. 现在可以通过csv文件读取飞行数据了（2022年5月3日）
-4. 可以通过程序来连续的改变飞机的高度了。
-## 尚待解决的问题：
-1. aotustart的设置命令无效，需要去查找一下有没有这个东西
-2. 改变飞机的姿势。
-3. 改变飞机的路线。(目前可以通过传递经纬来改变)
-4. 缓冲区溢出的问题。传递过多参数会导致缓冲区溢出，思路有 精简参数；压缩数据；增加缓冲区；分为多次发送。
-## TODO：
-1. 测试可用的参数，并整理出demo程序，可演示。
-2. 尝试连续控制飞机轨迹
-3. 尝试连续控制飞机姿态
+## 使用说明
 
-## 尚待明确的参数：
+0. 将本项目config 目录下的`fgudp.xml` 放入 ` $FGROOT\data\Protocol\` 目录下，`
 
-``有关飞机姿势的参数``
-``有关飞机路线的参数`` 
-``其他参数`` 
+   [^$FGROOT]: 比如，你的FlightGear软件安装在C:\FlightGear\ ,那么$FGROOT就是指C:\FlightGear
+
+   `
+
+1. 打开flightgear软件，在`设置`中输入以下字段(仅设置一次即可)
+
+```shell
+--allow-nasal-from-sockets
+--telnet=5555
+--httpd=5500
+--generic=socket,in,10,127.0.0.1,5701,udp,fgudp
+--generic=socket,out,10,127.0.0.1,5700,udp,fgudp
+```
+
+2. 在flightgear里点击`开始飞行`
+3. 通过任意编译器（比如 vscode）运行`readcsv.py` 程序，程序会读取`simplydata2.csv`测试文件的数据。
+
+*若想再次使用，打开FlightGear软件后，重复上述第2-3步*
+
+## 演示版本已经完成的功能
+
+1. 对给定参数初始化
+2. 选取了一组通用的飞机控制参数，可以控制飞机的轨迹和姿态。
+3. 通过缓冲机制并发读取文件和传递飞行参数。
+4. 采用插值算法等优化技术，提高了飞参序列的平滑过渡，提高了系统的性能和稳定性。
+
+## 实际效果
+
+（待补充）
+
+## 完整版本效果
+
+注意：以下程序截图基于本像项目进一步开发的，并非本项目全部具备。由于涉及知识产权和保密规定，不予公开源代码，敬请谅解！
+
+
+
+![总体界面展示](D:\横向项目\遥测数据管理\电子试讲系统\github展示demo版本\SAU-Teaching_and_evaluation_tools_system_for_aviation_experiments\README.assets\总体界面展示.png)
+
+[^图1]: 总体界面展示
+
+
+
+![飞机航线轨迹显示4.3.1](D:\横向项目\遥测数据管理\电子试讲系统\github展示demo版本\SAU-Teaching_and_evaluation_tools_system_for_aviation_experiments\README.assets\飞机航线轨迹显示4.3.1.jpg)
+
+[^图2]: 飞机轨迹地图展示
+
+
+
+![3可视化仪表展示](D:\横向项目\遥测数据管理\电子试讲系统\github展示demo版本\SAU-Teaching_and_evaluation_tools_system_for_aviation_experiments\README.assets\3可视化仪表展示.jpg)
+
+[^图3]: 仪表盘展示（这个还不完善。。。还是草稿状态）
+
+![飞机视角①4.1.1](D:\横向项目\遥测数据管理\电子试讲系统\github展示demo版本\SAU-Teaching_and_evaluation_tools_system_for_aviation_experiments\README.assets\飞机视角①4.1.1.jpg)
+
+[^图4]: 飞机视角展示：舱内视角
+
+
+
+![飞机视角②4.1.2](D:\横向项目\遥测数据管理\电子试讲系统\github展示demo版本\SAU-Teaching_and_evaluation_tools_system_for_aviation_experiments\README.assets\飞机视角②4.1.2.jpg)
+
+[^图5]: 飞机视角展示：侧面
+
+
+
+![飞机视角③4.1.3](D:\横向项目\遥测数据管理\电子试讲系统\github展示demo版本\SAU-Teaching_and_evaluation_tools_system_for_aviation_experiments\README.assets\飞机视角③4.1.3.jpg)
+
+[^图6]: 飞机视角展示：某一旋转角度
+
+
 
