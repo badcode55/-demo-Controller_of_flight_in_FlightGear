@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+    <logging>
+        <log>
+            <!--filename 新版本的fg 应该为绝对路径-->
+            <!--
+            将该文件转移到C:\Users\lenovo\AppData\Roaming\flightgear.org
+            命令行输入如下，使用绝对路径：
+            config前面两个“-’，由于xml备注的格式问题，就只写了一个，记得手动补上
+            fgfs -config="C:\Users\lenovo\AppData\Roaming\flightgear.org\log-config.xml"
+
+        -->
+            <filename>C:\Users\huangbingjie\AppData\Roaming\flightgear.org\Export\steering.csv</filename>
+            <enabled>true</enabled>
+            <interval-ms>1000</interval-ms>
+            <!--
+       interval-ms 是定义采集数据的时间间隔，单位毫秒
+   -->
+            <delimiter>,</delimiter>
+            <!--例子：
+   <entry>
+    <enabled>true</enabled>
+    <title>Rudder</title>
+    <property>/controls/rudder</property>
+   </entry>
+   -->
+            <entry>
+                <enabled>true</enabled>
+                <title>aileron</title>
+                <property>/controls/flight/aileron</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>elevator</title>
+                <property>/controls/flight/elevator</property>
+            </entry>
+            <entry>
+                <enabled>true</enabled>
+                <title>rudder</title>
+                <property>/controls/flight/rudder</property>
+            </entry>
+            <entry>
+                <enabled>true</enabled>
+                <title>flaps</title>
+                <property>/controls/flight/flaps</property>
+            </entry>
+            <entry>
+                <enabled>true</enabled>
+                <title>throttle0</title>
+                <property>/controls/engines/engine[0]/throttle</property>
+            </entry>
+            <entry>
+                <enabled>true</enabled>
+                <title>throttle1</title>
+                <property>/controls/engines/engine[1]/throttle</property>
+            </entry>
+            <!--下面这个几个的配置有点怪，真的有instrumentation吗？-->>
+            <entry>
+                <enabled>true</enabled>
+                <title>vsi-fpm</title>
+                <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>alt-ft</title>
+                <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>ai-pitch</title>
+                <property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>ai-roll</title>
+                <property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>ai-offset</title>
+                <property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>hi-heading</title>
+                <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>roll</title>
+                <property>/orientation/roll-deg</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>pitch</title>
+                <property>/orientation/pitch-deg</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>heading</title>
+                <property>/orientation/heading-deg</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>airspeed</title>
+                <property>/velocities/airspeed-kt</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>speed-north</title>
+                <property>/velocities/speed-north-fps</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>speed-east</title>
+                <property>/velocities/speed-east-fps</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>speed-down</title>
+                <property>/velocities/speed-down-fps</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>uBody-fps</title>
+                <property>/velocities/uBody-fps</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>wBody-fps</title>
+                <property>/velocities/wBody-fps</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>north-accel-fps_sec</title>
+                <property>/accelerations/ned/north-accel-fps_sec</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>east-accel-fps_sec</title>
+                <property>/accelerations/ned/east-accel-fps_sec</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>down-accel-fps_sec</title>
+                <property>/accelerations/ned/down-accel-fps_sec</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>x-accel-fps_sec</title>
+                <property>/accelerations/pilot/x-accel-fps_sec</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>y-accel-fps_sec</title>
+                <property>/accelerations/pilot/y-accel-fps_sec</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>z-accel-fps_sec</title>
+                <property>/accelerations/pilot/z-accel-fps_sec</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>latitude</title>
+                <property>/position/latitude-deg</property>
+            </entry>
+
+            <entry>
+                <enabled>true</enabled>
+                <title>longitude</title>
+                <property>/position/longitude-deg</property>
+            </entry>
+            <entry>
+                <enabled>true</enabled>
+                <title>altitude</title>
+                <property>/position/altitude-ft</property>
+            </entry>
+            <entry>
+                <enabled>true</enabled>
+                <title>crashed</title>
+                <property>/sim/crashed</property>
+            </entry>
+
+        </log>
+    </logging>
+</PropertyList>
