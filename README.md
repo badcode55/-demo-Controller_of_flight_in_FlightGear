@@ -15,11 +15,11 @@
 
 ## 使用说明
 
-0. 将本项目config 目录下的`fgudp.xml` 放入 ` $FGROOT\data\Protocol\` 目录下，`
+0. 将本项目config 目录下的`fgudp.xml` 放入 ` $FGROOT\data\Protocol\` 目录下，
 
    [^$FGROOT]: 比如，你的FlightGear软件安装在C:\FlightGear\ ,那么$FGROOT就是指C:\FlightGear
 
-   `
+   
 
 1. 打开flightgear软件，在`设置`中输入以下字段(仅设置一次即可)
 
