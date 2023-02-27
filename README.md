@@ -47,6 +47,10 @@
 
 （待补充）
 
+## 参考项目
+
+[FGAutopilot](https://github.com/lingjiameng/FGAutopilot)
+
 ## 完整版本效果
 
 注意：以下程序截图基于本像项目进一步开发的，并非本项目全部具备。由于涉及知识产权和保密规定，不予公开源代码，敬请谅解！
